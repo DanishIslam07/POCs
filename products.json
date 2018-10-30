@@ -1,0 +1,189 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideSelection": true,
+    "hideColumnHeader": true,
+    "rowFormatter": {
+        "//": "This is a parent div container",
+        "elmType": "div",
+        "attributes": {
+            "class": " ms-borderColor-neutralLight"
+        },
+        "style": {
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "align-items": "stretch",
+            "padding": "8px",
+            "margin-bottom": "16px",
+            "max-width": "930px",
+            "border-radius": "8px",
+            "box-shadow": "4px 4px 8px darkgrey"
+        },
+        "children": [
+            {
+                "elmType": "div",
+                "style": {
+                    "flex-grow": "1",
+                    "display": "flex",
+                    "flex-wrap": "wrap",
+                    "align-items": "stretch",
+                    "max-width": "300px"
+                },
+                "children": [
+                    {
+                        "elmType": "div",
+                        "style": {
+                        "flex": "none"
+                        },
+                        "children": [
+                            {
+                                "elmType": "div",
+                                "style": {
+                                    "width": "150px",
+                                    "height": "150px",
+                                    "overflow": "hidden",
+                                    "border-radius": "50%",
+                                    "margin-right": "8px"
+                                  },
+                                "children": [
+                                    {
+                                        "elmType": "img",
+                                        "attributes": {
+                                            "src": {
+                                                "operator": "+",
+                                                "operands": [
+                                                    "https://dannyislam.sharepoint.com",
+                                                    "[$Image]"
+                                                ]
+                                            }                            
+                                        },
+                                        "style": {
+                                            "position": "relative",
+                                            "top": "50%",
+                                            "left": "50%",
+                                            "width": "100%",
+                                            "height": "auto",
+                                            "margin-left": "-50%",
+                                            "margin-top": "-50%"
+                                          }
+                                    }
+                                ]
+                            }
+                        ]                      
+                    }
+                ]                
+            },
+            {
+                "elmType": "div",
+                "style": {
+                    "flex-grow": "1",
+                    "display": "flex",
+                    "flex-direction": "column",
+                    "flex-wrap": "nowrap",
+                    "align-items": "stretch",
+                    "max-width": "600px"
+                  },
+                "children": [                    
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "flex-grow": "1"
+                        },
+                        "children": [
+                            {
+                                "elmType": "button",
+                                "txtContent": "[$Title]",
+                                "style": {
+                                    "display": "block",
+                                    "border": "0",
+                                    "padding": "0",
+                                    "margin-bottom": "0.5em",
+                                    "background-color": "transparent",
+                                    "cursor": "pointer",
+                                    "line-height": "1.5em",
+                                    "overflow": "hidden",
+                                    "text-align": "left"
+                                },
+                                "attributes": {
+                                    "class": "ms-fontSize-xl ms-fontColor-themePrimary"
+                                },
+                                "customRowAction": {
+                                    "action": "defaultClick"
+                                }
+                            },
+                            {
+                                "elmType": "span",
+                                "txtContent": "[$Description]",
+                                "style": {
+                                    "display": "=if([$Description] == '', 'none', 'block')"
+                                },
+                                "attributes": {
+                                    "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "flex-grow": "2",
+                            "display": "flex",
+                            "flex-direction": "row",
+                            "flex-wrap": "wrap",
+                            "align-items": "flex-end"
+                        },
+                        "children": [
+                            {
+                                "elmType": "span",
+                                "style": {
+                                    "display": "=if([$Price] == '', 'none', 'block')",
+                                    "padding-right": "20px"                                    
+                                },
+                                "attributes": {
+                                    "class": "ms-fontSize-mPlus ms-fontWeight-bold ms-fontColor-neutralPrimary"
+                                },
+                                "txtContent": "='$' +Number([$Price])"
+                            },
+                            {
+                                "elmType": "span",
+                                "attributes": {
+                                    "class": "=if([$InStock], 'ms-fontColor-green', 'ms-fontColor-red') + ' ms-fontSize-mPlus ms-fontWeight-bold'"
+                                },
+                                "style": {
+                                    "padding-right": "20px"
+                                },
+                                "txtContent": "=if([$InStock], 'In Stock', 'Out of Stock')"
+                            },
+                            {
+                                "elmType": "button",
+                                "customRowAction": {
+                                  "action": "share"
+                                },
+                                "attributes": {
+                                  "title": "Share",
+                                  "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                },
+                                "style": {
+                                  "border": "none",
+                                  "background-color": "transparent",
+                                  "cursor": "pointer"
+                                },
+                                "children": [
+                                  {
+                                    "elmType": "span",
+                                    "attributes": {
+                                      "iconName": "Share"
+                                    }
+                                  },
+                                  {
+                                      "elmType": "span",
+                                      "txtContent": "Share"
+                                  }
+                                ]
+                              }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}   
